@@ -36,6 +36,8 @@ cleartext=rc4.rc4crypt(message_encrypted,seed)
 icv_enclair=cleartext[-4:]
 (icv_numerique,)=struct.unpack('!L', icv_enclair)
 
+arp.show()
+
 # le message sans le ICV
 text_enclair=cleartext[:-4] 
 
