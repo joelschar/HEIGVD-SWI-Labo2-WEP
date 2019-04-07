@@ -17,6 +17,8 @@ capture d'écran wireshark :
 
 ![1554638411029](./partie2.png)
 
+Nous avons remarqué que pour qu'une trame soit correct, la taille de la partie de données doit être exactement équivalente à 36 bytes. Dans le cas contraire, la trame n'est pas reconnue par wireshark et elle n'est alors pas déchiffrée.
+
 ## 3 Fragmentation
 
 code : manual-encryption-frag.py
@@ -32,3 +34,5 @@ capture d'écran wireshark :
 *Ici on peut voir tout les fragments regroupés et déchiffrés* :
 
 ![1554638647149](./partie3_2.png)
+
+Pour que les fragments puissent être réassemblée il est important d’incrémenter le numéro de séquence et de mettre le bit "more fragments" à 1 pour tous les packets, sauf le dernier.
